@@ -1,0 +1,4 @@
+$searchPath = "<PATH TO SEARCH>"
+$keyword = "<KEYWORD1>"
+$fileType = "*.txt","*.ini","*.db"
+Get-ChildItem -Path $searchPath -Recurse -Include $fileType -ErrorAction SilentlyContinue | Select-String $keyword | ForEach-Object {"FilePath: $($_.Path); Line: $($_.LineNumber); Strings: $($_.Line.Trim())"}
